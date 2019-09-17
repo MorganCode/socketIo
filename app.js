@@ -1,12 +1,16 @@
+// Modules
 let express = require('express')
-let app = express()
 let morgan = require('morgan')
+let config = require('./config')
 
-let options = {
+// Variables Glovales
+const app = express()
+const port = config.express.port
+const options = {
   root: __dirname + '/views'
 }
 
-// Middleware
+// Middlewares
 app.use(express.static(options.root))
 app.use(morgan('dev'))
 
@@ -30,4 +34,4 @@ app.get('/items', (req, res) => {
 })
 
 // Start server
-app.listen(8080, () => console.log('Server starting, on port 8080'))
+app.listen(port, () => console.log('Server starting, on port ' + port))
