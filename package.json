@@ -20,7 +20,8 @@
   "homepage": "https://github.com/MorganCode/socketIo#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "morgan": "^1.9.1"
