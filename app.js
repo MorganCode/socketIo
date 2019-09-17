@@ -2,12 +2,21 @@ let express = require('express')
 let app = express()
 let morgan = require('morgan')
 
+let options = {
+  root: __dirname + '/views'
+}
+
 // Middleware
+app.use(express.static(options.root))
 app.use(morgan('dev'))
 
 // Routes
+app.get('/', (req, res) => {
+  res.redirect('/home')
+})
+
 app.get('/home', (req, res) => {
-  res.send('hello')
+  res.sendFile('index.html', options)
 })
 
 app.get('/params/:name', (req, res) => {
