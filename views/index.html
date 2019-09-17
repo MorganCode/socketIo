@@ -12,9 +12,9 @@
   <body class="modal-active">
     <div id="modal-container">
       <div class="modal-background">
-        <div class="modal">
+        <div class="modal" method="post" id="formUsername">
           <h2>Choisi un username</h2>
-          <input type="text" name="username" />
+          <input type="text" name="username" id="inputUsername" />
         </div>
       </div>
     </div>
@@ -198,13 +198,12 @@
     <script src="assets/js/index.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io()
-      socket.on('hi', () => {
-        alert('Server say hi !')
-        setTimeout(() => {
-          socket.emit('hi')
-        }, 1000)
-      })
+      // Socket
+      const socket = io()
+
+      let formUsername = document.body.querySelector('#formUsername')
+      inputUsername = formUsername.querySelector('#inputUsername')
+      console.log(inputUsername)
     </script>
   </body>
 </html>

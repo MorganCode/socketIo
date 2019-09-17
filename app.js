@@ -42,15 +42,6 @@ io.on('connection', function(socket) {
   // USER connected
   console.log(`User ${socket.id} connected`)
 
-  // Emit
-  setTimeout(() => {
-    socket.emit('hi')
-  }, 1000)
-
-  socket.on('hi', () => {
-    console.log('A client say hi !')
-  })
-
   // USER disconnected
   socket.on('disconnect', () => {
     console.log(`User ${socket.id} disconnected`)
